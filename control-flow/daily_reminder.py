@@ -1,23 +1,22 @@
 # daily_reminder.py
 
 # Prompt user for task
-task = input("📝 Enter your task: ")
+task = input("Enter your task: ")
 
-# 3. Priority prompt with validation
+# Prompt user for priority with input validation
 while True:
-    priority = input("🔥 Priority (high/medium/low): ").lower()
+    priority = input("Priority (high/medium/low): ").lower()
     if priority in ["high", "medium", "low"]:
         break
-    print("❗ Please enter a valid priority (high/medium/low).")
+    print("Please enter a valid priority (high/medium/low).")
 
-# 4. Time-bound prompt with validation
+# Prompt user if task is time-bound
 while True:
-    time_bound = input("⏰ Is this task time-bound? (yes/no): ").lower()
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
     if time_bound in ["yes", "no"]:
         break
-    print("❗ Please answer with yes or no.")
+    print("Please answer with yes or no.")
 
-# 5. Use match-case for priority-based reactions
 match priority:
     case "high":
         priority_note = "⚠️ This is a high-priority task. Give it immediate attention!"
