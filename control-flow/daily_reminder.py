@@ -3,37 +3,37 @@
 # Prompt user for task
 task = input("📝 Enter your task: ").strip()
 
-# Prompt for priority
-priority = ""
+# 3. Priority prompt with validation
 while True:
     priority = input("🔥 Priority (high/medium/low): ").lower().strip()
     if priority in ["high", "medium", "low"]:
         break
     print("❗ Please enter a valid priority (high/medium/low).")
 
-# Prompt for time-bound
-time_bound = ""
+# 4. Time-bound prompt with validation
 while True:
     time_bound = input("⏰ Is this task time-bound? (yes/no): ").lower().strip()
     if time_bound in ["yes", "no"]:
         break
     print("❗ Please answer with yes or no.")
 
-# Replace match-case with if-elif-else for priority
-if priority == "high":
-    priority_note = "⚠️ This is a high-priority task. Give it immediate attention!"
-elif priority == "medium":
-    priority_note = "🔔 This is a medium-priority task. Schedule it soon."
-else:
-    priority_note = "📝 This is a low-priority task. Complete it when possible."
+# 5. Use match-case for priority-based reactions
+match priority:
+    case "high":
+        priority_note = "⚠️ This is a high-priority task. Give it immediate attention!"
+    case "medium":
+        priority_note = "🔔 This is a medium-priority task. Schedule it soon."
+    case "low":
+        priority_note = "📝 This is a low-priority task. Complete it when possible."
 
-# Check if task is time-bound
+# 6. Check if task is time-bound and modify reminder
 if time_bound == "yes":
     urgency = "⏳ Time-sensitive! Consider setting a deadline."
 else:
     urgency = "⛱️ No immediate time pressure."
-    
-    print("\n📌 TASK REMINDER")
+
+# 7. Final customized reminder output
+print("\n📌 TASK REMINDER")
 print(f"Task: {task}")
 print(f"Priority: {priority.capitalize()}")
 print(priority_note)
