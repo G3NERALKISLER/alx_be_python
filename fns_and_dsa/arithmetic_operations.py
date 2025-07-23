@@ -9,6 +9,8 @@ def perform_operation(num1, num2, operation):
     elif operation == 'divide':
         if num2 == 0:
             return "cannot divide by zero"
+        elif num2 != 0:
+            return num1 /num2
         else:
             return float('inf')  # Division by zero
     else:
